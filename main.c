@@ -1,6 +1,5 @@
 #include <ctype.h>
 #include <raylib.h>
-#include <copper-utils/copper_da.h>
 
 #define WINDOW_WIDTH    800
 #define WINDOW_HEIGHT   450
@@ -16,9 +15,12 @@ int main(void){
     InitWindow(WINDOW_WIDTH, WINDOW_HEIGHT, "Hello!");
     SetTargetFPS(FPS);
 
+    Font default_font = GetDefaultFont();
+
     while(!WindowShouldClose()){
         BeginDrawing();
         ClearBackground(GetColor(BG_COLOR));
+        DrawFPS(10, 10);
         EndDrawing();
     }
     CloseWindow();
